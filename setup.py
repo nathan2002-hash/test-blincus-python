@@ -8,7 +8,7 @@ setup(
         "requests>=2.25.1"
     ],
     author="Quixines",
-    author_email="support.quixines.com",
+    author_email="nathan@quixines.com",
     description="A Blincus payment processing package.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
