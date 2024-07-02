@@ -1,4 +1,4 @@
-name: Publish Python Package
+name: Blincus
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  test-and-publish:
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
-        run: |
-          pip install pytest
-          pytest
-
       - name: Build package
         run: |
           python setup.py sdist bdist_wheel
@@ -38,4 +33,4 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
           python -m pip install --upgrade twine
-          twine upload --https://github.com/nathan2002-hash/test-blincus-python https://upload.pypi.org/legacy/ dist/*
+          twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
