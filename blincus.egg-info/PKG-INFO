@@ -4,7 +4,7 @@ Version: 0.1
 Summary: A Blincus payment processing package.
 Home-page: https://github.com/nathan2002-hash/test-blincus-python
 Author: Quixines
-Author-email: support.quixines.com
+Author-email: nathan@quixines.com
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
