@@ -4,8 +4,8 @@ class BlincusClient:
     def __init__(self, email, password):
         self.email = email
         self.password = password
-        self.auth_url = 'https://api.blincus.com/api/token'
-        self.transaction_url = 'https://api.blincus.com/api/sandbox/v1/payment'
+        self.auth_url = 'http://localhost:89/api/token'
+        self.transaction_url = 'http://localhost:89/api/sandbox/v1/payment'
         self.access_token = None
 
     def get_access_token(self):
