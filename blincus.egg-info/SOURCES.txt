@@ -3,6 +3,7 @@ README.md
 setup.py
 blincus/__init__.py
 blincus/client.py
+blincus/exceptions.py
 blincus.egg-info/PKG-INFO
 blincus.egg-info/SOURCES.txt
 blincus.egg-info/dependency_links.txt
