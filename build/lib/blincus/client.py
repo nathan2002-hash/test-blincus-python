@@ -19,13 +19,14 @@ class BlincusClient:
 
         response = self._make_request(url, payload)
         if response:
-            self.token = response.get('token')
-            if not self.token:
-                print("Authentication failed: Token missing in the response")
-                return
-            print("Authentication successful!")
+            # Check if token exists in response and print appropriate messages
+            if 'token' in response:
+                self.token = response['token']
+                print(f"Authentication successful! Token: {self.token}")
+            else:
+                print(f"Authentication failed: {response.get('error', 'Unknown error')}")
         else:
-            print("Authentication failed")
+            print("Authentication failed due to an error.")
 
     def send_message(self, sender_id, type_, phone_number, message):
         """
@@ -51,25 +52,31 @@ class BlincusClient:
         if response:
             print("Message sent successfully:", response)
         else:
-            print("Message sending failed")
+            print("Message sending failed.")
 
     def _make_request(self, url, payload, headers=None):
         """
         Helper function to handle the HTTP request and error handling.
         """
         try:
+            # Send the request
             if headers:
                 response = requests.post(url, json=payload, headers=headers)
             else:
                 response = requests.post(url, json=payload)
 
             response.raise_for_status()  # Will raise HTTPError for non-2xx responses
+            
+            # Return the response in JSON format
             return response.json()
-        
+
         except requests.exceptions.HTTPError as e:
-            # Output the error message from the server
-            error_message = response.json().get('error', 'Unknown error')
-            print(f"Error: {error_message}")
+            # If error occurs, print the server's response error message
+            try:
+                error_message = response.json().get('error', 'Unknown error')
+                print(f"Error: {error_message}")
+            except ValueError:
+                print(f"HTTP Error occurred: {e}")
             return None
 
         except requests.RequestException as e:

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="blincus-test",
-    version="0.35",
+    version="0.36",
     packages=find_packages(),
     install_requires=[
         "requests>=2.25.1"
