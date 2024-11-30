@@ -1,7 +1,7 @@
 import requests
 
 class BlincusPayment:
-    def __init__(self, access_key, secret, base_url='http://192.168.254.25:89'):
+    def __init__(self, access_key, secret, base_url='http://127.0.0.1:89'):
         """
         Initialize the Blincus client with authentication details.
         """
