@@ -2,8 +2,11 @@ LICENCE
 README.md
 setup.py
 blincus/__init__.py
-blincus/client.py
 blincus/exceptions.py
+blincus/message.py
+blincus/payment.py
+blincus/paymentretrieve.py
+blincus/refund.py
 blincus_test.egg-info/PKG-INFO
 blincus_test.egg-info/SOURCES.txt
 blincus_test.egg-info/dependency_links.txt

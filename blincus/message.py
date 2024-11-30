@@ -1,6 +1,6 @@
 import requests
 
-class BlincusClient:
+class BlincusMessage:
     def __init__(self, access_key, secret, base_url='http://192.168.254.25:89'):
         """
         Initialize the Blincus client with authentication details.

@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name="blincus-test",
-    version="0.36",
+    version="0.37",
     packages=find_packages(),
     install_requires=[
         "requests>=2.25.1"
     ],
     author="Quixines",
     author_email="nathan@quixines.com",
-    description="A Blincus payment processing package.",
+    description="A Blincus payment processing and messaging package.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/nathan2002-hash/test-blincus-python",
